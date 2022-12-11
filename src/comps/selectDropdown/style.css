@@ -1,0 +1,20 @@
+select{
+  background-color: #ffffff;
+  color: black;
+  border: 0px;
+  padding:8px;
+  border-radius:5px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+  font-size:16px;
+  cursor: pointer;
+}
+
+.dropdownCont {
+  display:flex;
+  width:100%;
+  justify-content: space-between;
+  padding-left:75px;
+  padding-right:75px;
+  margin-top:20px;
+}

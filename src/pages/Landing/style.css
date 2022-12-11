@@ -1,0 +1,483 @@
+/*
+DEX Analytics Dashboard Template.
+Copyright (C) 2021 Daniel Troyer
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Fjalla+One&family=Poppins:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.ar{
+  text-align: right;
+}
+.hide{
+  display: none!important;
+}
+
+#loader, #loader2{
+  text-align: center;
+  margin-top: 10rem;
+  width: 100%;
+}
+#main-container{
+  margin: 0 6rem;
+}
+.logo-wrap{
+  margin: 1rem 0;
+}
+
+.dash-logo{
+  font-family: 'Faster One', cursive;
+}
+
+.dex-logo{
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+.chain-wrap{
+  display: grid;
+  justify-content: end;
+}
+
+.nav-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+#chain-select{
+  background-color: inherit;
+  padding: 0.3rem;
+  border-radius: 0;
+  box-shadow: none!important;
+  border: black solid 1px;
+}
+.btn{
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  height: 100%;
+  border: black solid 1px;
+  background: inherit;
+  padding: 0.5rem;
+  box-shadow: none!important;
+  transition-duration: 1000ms;
+  transition-property: all;
+}
+
+.btn:hover{
+  background: #f4f4f4;
+  font-style: italic;
+}
+.back-wrap{
+  height: 100%;
+}
+.test{
+  margin: 1rem 0;
+}
+.dex-btn{
+  padding: 1rem;
+  border: black solid 1px;
+  height: 100px;
+  background: inherit;
+  transition-duration:1000ms;
+  transition-property: all;
+}
+
+
+.dex-btn.eth, .dex-btn.bsc, .dex-btn.matic, .dex-btn.avax:hover{
+  font-style: italic;
+}
+.dex-btn.eth:hover, .asset-card.eth:hover{
+  background:  #8ec5fc1c;
+}
+.dex-btn.bsc:hover{
+  background:  #f3c73825;
+}
+
+.dex-btn.matic:hover{
+  background:  #8147e51e;
+}
+
+.dex-btn.avax:hover{
+  background:  #0000000e;
+}
+
+option{
+  background-color: inherit;
+}
+
+.logo-txt{
+  font-size: 3rem;
+}
+
+.dexlist{
+  grid-gap: 1rem;
+  display: grid;
+}
+.dexlist.bsc{
+  grid-template-columns: repeat(5,1fr);
+}
+.dexlist.avax{
+  grid-template-columns: repeat(3,1fr);
+}
+
+.dexlist.eth{
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: auto;
+}
+
+.dexlist.matic{
+  grid-template-columns: repeat(3,1fr);
+}
+
+.dex-header{
+  text-align: center;
+  font-size: 3rem;
+  height: 100%;
+}
+
+.dex-wrap{
+  height: 100%;
+}
+
+.menu-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  grid-gap: 2rem;
+}
+
+.title{
+  font-size: 1.5rem;
+  font-weight:bolder;
+  border-bottom: 1px solid black;
+  padding: 1rem 0;
+  background-color:#0F0F0F;
+  color:#FF4C8B;
+}
+
+.sm-title{
+  font-size: 1rem;
+   background-color:#0F0F0F;
+   font-weight:bolder;
+  color:#FF4C8B;
+  padding: 0.5rem 0;
+}
+.showcase-wrap, .health-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  margin: 2rem 0;
+  grid-gap: 2rem;
+}
+
+.showcase-info, .health-info{
+  border: black solid 1px;
+}
+
+.data-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.5rem 0;
+}
+
+.dex-data-table{
+  margin: 1rem 0;
+}
+.data-row:hover{
+  background-color: rgb(212, 212, 212);
+}
+/* SENTIMENT */
+
+.sentiment-bar{
+	display:grid;
+	grid-gap: 0.5rem;
+	grid-template-columns: 0.1fr 1fr 0.1fr;
+	border-radius: 5px;
+  margin: 1rem 1rem;
+}
+
+#sentiment h3{
+	text-align: center;
+}
+#myProgress {
+	width: 100%;
+	height: 2rem;
+	background-color:white;
+	margin: auto;
+	text-align: right;
+  border: 1px solid black;
+  }
+
+#myBar {
+	width: 1%;
+	height: 100%;
+	background-color: #FF4C8B;
+	text-align: left;
+  transition: all 1s ease-out;
+  }
+
+.perc{
+	text-align: center;
+	font-weight: 700;
+  }
+
+
+#screener{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.filter{
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 12pt;
+  border: black solid 1px;
+  border-radius: none;
+}
+
+.dex-btn-wrap, .dex-page-wrap{
+  display: grid;
+  text-align: center;
+  grid-gap: 2rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.dex-btn-wrap{
+  grid-template-columns: 1fr 1fr;
+}
+
+.dex-page-wrap{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.asset-btn, .menu-btn{
+  display: grid;
+  border: black 1px solid;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0.5rem;
+}
+
+.asset-loading{
+  grid-column: span 5;
+}
+.asset-card{
+  background-color: #0F0F0F;
+  transition-duration: 500ms;
+  transition-property: all;
+  padding:10px;
+  
+}
+#asset-list{
+  display: grid;
+  word-wrap: break-word;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(5, auto);
+  word-wrap: break-word;
+  margin-bottom: 2rem;
+}
+
+.filter{
+  display: flex;
+  align-items: center;
+  height:20px;
+  cursor: pointer;
+  font-size:20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight:bold;
+  margin-top:20px;
+  margin-bottom:20px;
+  justify-content: flex-end;
+}
+
+.asset-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.symbol-header{
+  font-size: 16pt;
+}
+
+#results{
+  text-align: center;
+  font-size: 12pt;
+}
+
+.btn.active{
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  width: 100%;
+  font-size: 12pt;
+  background: inherit;
+  padding: 0.5rem;
+  box-shadow: none!important;
+  transition-duration: 1000ms;
+  transition-property: all;
+}
+
+.home-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.main-pair-wrap{
+  background-color: #0F0F0F;
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  border: black solid 1px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.social-link{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+.socials{
+  grid-column: 1/span 2;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  border: 1px black solid;
+  
+}
+.mag-btn{
+  font-size: 2rem;
+  display: grid;
+  align-items: center;
+  vertical-align: middle;
+}
+.form-wrap{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.farm-form{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0.5rem;
+  border: black 1px solid;
+  padding: 1rem;
+  width: 50%;
+}
+
+.farm-btn{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition-duration: 1000ms;
+  transition-property: all;
+}
+
+.farm-btn:hover{
+  background-color: white;
+  color: black;
+}
+.farm-btn, .farm-input{
+  font-size: 1rem;
+  text-align: center;
+  border: black solid 1px;
+  padding: 0.5rem;
+  width: 100%;
+}
+.results-wrap{
+  display: flex;
+  margin: 2rem 0;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.results-table{
+  display: grid;
+  width: 100%;
+  border: black solid 1px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.farm-add{
+  margin: 0.5rem 0;
+}
+.results-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.5rem 0;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+@media only screen and (max-width: 1450px) {
+  #asset-list{
+    grid-template-columns: repeat(3, auto);
+  }
+  .farm-form{
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  #asset-list{
+    grid-template-columns: repeat(2, auto);
+  }
+  #main-container{
+    margin: 0 3rem;
+  }
+  .showcase-wrap{
+    grid-template-columns: 1fr;
+  }
+  .socials{
+    grid-column: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .farm-form{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 609px) {
+  #asset-list{
+    grid-template-columns: repeat(1, auto);
+  }
+  #main-container{
+    margin: 0 2rem;
+  }
+  .results-row, .data-row{
+    grid-template-columns: 1fr;
+  }
+}

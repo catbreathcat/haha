@@ -1,0 +1,13 @@
+
+.back{
+  display: flex;
+  align-items: center;
+  height:20px;
+  cursor: pointer;
+  font-size:20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight:bold;
+  margin-top:20px;
+  margin-bottom:20px;
+}

@@ -1,0 +1,70 @@
+.App {
+  width:100vw;
+  height:100vh;
+  overflow-x: hidden;
+  background-color: #000426;
+  color:white;
+  font-family: 'Titillium Web', sans-serif;
+
+}
+
+.icon{
+  padding-top:10px;
+  cursor: pointer;
+}
+
+.select-chain{
+  position: absolute;
+  top:50px;
+  right:50px;
+}
+
+.load{
+  width:100%;
+  height:100%;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.main{
+  padding:0rem 5rem 5rem 5rem;
+  position: relative;
+}
+
+.logo{
+  position: fixed;
+  right:30px;
+  bottom:20px;
+  width:200px;
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+
+
+.global{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top:30px;
+  right:80px;
+  height:20px;
+  cursor: pointer;
+  font-size:20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight:bold;
+}
+
+.error-image{
+  width:100px;
+  height:100px;
+  object-position: center;
+  content:url('./assets/alert.svg');
+}
+

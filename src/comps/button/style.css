@@ -1,0 +1,19 @@
+button{
+  background-color: #FF4C8B;
+  color:white;
+  border: 0px;
+  padding:12px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size:16px;
+  font-weight: 900;
+  cursor: pointer;
+  width: max-content;
+  border-radius: 0.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+button:hover{
+  background-color: rgb(223, 55, 114);
+}
+
